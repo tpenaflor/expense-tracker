@@ -2,7 +2,6 @@ import React from 'react'
 import moment from 'moment'
 
 import {SingleDatePicker } from 'react-dates'
-import 'react-dates/lib/css/_datepicker.css'
 import 'react-dates/initialize'
 
 class ExpenseForm extends React.Component {
@@ -10,7 +9,7 @@ class ExpenseForm extends React.Component {
         desc: this.props.desc ? this.props.desc : '',
         note: this.props.note ? this.props.note : '',
         amount: this.props.amount ? (this.props.amount/100).toFixed(2).toString() : '',
-        createAt: moment(this.props.createAt),
+        createAt: this.props.createAt ? moment(this.props.createAt) : moment(),
         calFocus : false,
         errorState : ''
     }

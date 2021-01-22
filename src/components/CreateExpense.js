@@ -4,12 +4,13 @@ import {connect} from 'react-redux'
 import ExpenseForm from './ExpenseForm'
 import {addExpense} from '../actions/expenses'
 
-const CreateExpense = ({dispatch, history}) => (
+const CreateExpense = ({onSubmit, history}) => (
     <div>
         <h2>CreateExpense</h2>
         <ExpenseForm 
             onSubmit = {(expense) => {
-                dispatch(addExpense({...expense}))
+                // dispatch(addExpense({...expense}))
+                onSubmit(expense)
                 history.push('/')
             }}
         />
@@ -17,4 +18,8 @@ const CreateExpense = ({dispatch, history}) => (
 
 )
 
-export default connect()(CreateExpense)
+const mapDispatchToProps = (dispatch)=> ({
+    onSubmit : (expense) => dispatch(addExpense(expense))
+})
+
+export default connect(undefined, mapDispatchToProps)(CreateExpense)
