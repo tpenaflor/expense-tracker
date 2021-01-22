@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test expense list 1`] = `
+<div>
+  <h1>
+    Expense List
+  </h1>
+  <ExpenseEntry
+    amount={5000}
+    createAt={"1970-01-01T00:00:00.000Z"}
+    desc="tea"
+    id="1"
+    key="1"
+    note="tea note"
+  />
+  <ExpenseEntry
+    amount={2500000}
+    createAt={"1969-12-01T00:00:00.000Z"}
+    desc="coffee"
+    id="2"
+    key="2"
+    note="coffee note"
+  />
+  <ExpenseEntry
+    amount={25000}
+    createAt={"1970-02-01T00:00:00.000Z"}
+    desc="milk"
+    id="3"
+    key="3"
+    note="milk note"
+  />
+</div>
+`;
+
+exports[`test expense list empty 1`] = `
+<div>
+  <h1>
+    Expense List
+  </h1>
+  <h3>
+    No matching expenses or you are debt free
+  </h3>
+</div>
+`;
