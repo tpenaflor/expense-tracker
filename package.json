@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Tyrone",
-  "license": "MIT",
   "scripts": {
     "build": "webpack --mode=production",
     "serve": "live-server public/",
