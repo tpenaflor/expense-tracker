@@ -6,12 +6,14 @@ import getVisibleExpenses from '../selectors/expenses'
 
 export const ExpenseList = (props) => (
     <div>
-        <h1>Expense List</h1>
+        <h1>Expense List 
+            {props.all.expenses.length > 0 && ` ${props.expenses.length } of ${props.all.expenses.length}`}
+        </h1>
 
-        {props.expenses.length > 0 ? 
+        {props.expenses.length > 0 ? (
             props.expenses.map((exp) => (
             <ExpenseEntry key={exp.id} {...exp}/>
-        )) :
+        ))) :
             <h3>No matching expenses or you are debt free</h3>
         }
     </div>

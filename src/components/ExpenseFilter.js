@@ -37,7 +37,7 @@ export class ExpenseFilter extends React.Component {
         return (
             <div>
                 <input type='text' value={this.props.filters.text} onChange={(e)=>(
-                    this.props.setTextFilter(e.target.value)
+                    this.props.setTextFilter(e.target.value.trim())
                 )}/>
                 <label>Sort By:</label>
                 <select id='filterBy' value={this.props.filters.sortBy} onChange={(e)=>{

@@ -4,6 +4,7 @@ exports[`test expense list 1`] = `
 <div>
   <h1>
     Expense List
+     3 of 3
   </h1>
   <ExpenseEntry
     amount={5000}
