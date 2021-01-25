@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import ExpenseForm from './ExpenseForm'
 import {editExpense, removeExpense} from '../actions/expenses'
 
-const EditExpensePage = (props) => (
+export const EditExpensePage = (props) => (
     <div>
         <h2>Edit {props.expense.desc} </h2>
         <ExpenseForm 
@@ -12,13 +12,15 @@ const EditExpensePage = (props) => (
             amount = {props.expense.amount}
             createAt = {props.expense.createAt}
             note = {props.expense.note}
-            onSubmit = {(expense) => {
-                props.dispatch(editExpense(props.expense.id, expense))
+            onSubmit = {
+            (expense) => {
+                props.editExpense(props.expense.id, expense)
                 props.history.push('/')
-            }} />
+            }} 
+            />
         
         <button onClick={()=>{
-                props.dispatch(removeExpense(props.expense.id))
+                props.removeExpense(props.expense.id)
                 props.history.push('/')
             }}>Remove</button>
     </div>
@@ -38,4 +40,9 @@ const mapToProps = (state, props) =>
     }
 }
 
-export default connect(mapToProps)(VerifyEditPage)
+const mapDispToProps = (dispatch) => ({
+    editExpense : (id,expense) => dispatch(editExpense(id, expense)),
+    removeExpense : (id) => dispatch(removeExpense(id))
+})
+
+export default connect(mapToProps,mapDispToProps)(VerifyEditPage)

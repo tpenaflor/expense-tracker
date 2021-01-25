@@ -1,6 +1,5 @@
 
-
-const filtersReducerDefaultState = {
+export const filtersReducerDefaultState = {
     text: '',
     sortBy:'date',
     startDate: undefined,

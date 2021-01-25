@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import ExpenseForm from './ExpenseForm'
 import {addExpense} from '../actions/expenses'
 
-const CreateExpense = ({onSubmit, history}) => (
+export const CreateExpense = ({onSubmit, history}) => (
     <div>
         <h2>CreateExpense</h2>
         <ExpenseForm 

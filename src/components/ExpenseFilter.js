@@ -1,37 +1,34 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import moment from 'moment'
 import {DateRangePicker} from 'react-dates'
-import 'react-dates/lib/css/_datepicker.css'
-
 import { setTextFilter, sortByDate, sortByAmount , setEndDate, setStartDate} from '../actions/filters'
 
 
-class ExpenseFilter extends React.Component {
+export class ExpenseFilter extends React.Component {
     state = {
         startDate : null,
         endDate : null,
         focusedInput : null
     }
     
-    componentDidUpdate ({filters}) {
-        // console.log('old',prevState)
-        console.log('changes',this.state)
-    }
+    // componentDidUpdate ({filters}) {
+    //     // console.log('old',prevState)
+    //     console.log('changes',this.state)
+    // }
     onDatesChange = ({ startDate, endDate }) => {
         this.setState({ startDate, endDate })
 
         if (startDate && endDate)
         {
-            this.props.dispatch(setEndDate(endDate))
-            this.props.dispatch(setStartDate(startDate))
+            this.props.setEndDate(endDate)
+            this.props.setStartDate(startDate)
         }
         
         if (!startDate && !endDate)
         {
-            this.props.dispatch(setEndDate(null))
-            this.props.dispatch(setStartDate(null))
+            this.props.setEndDate(null)
+            this.props.setStartDate(null)
         }
         // console.log(this.setState)
     }
@@ -40,12 +37,12 @@ class ExpenseFilter extends React.Component {
         return (
             <div>
                 <input type='text' value={this.props.filters.text} onChange={(e)=>(
-                    props.dispatch(setTextFilter(e.target.value))
+                    this.props.setTextFilter(e.target.value)
                 )}/>
                 <label>Sort By:</label>
                 <select id='filterBy' value={this.props.filters.sortBy} onChange={(e)=>{
-                if (e.target.value === 'amount') return this.props.dispatch(sortByAmount())
-                this.props.dispatch(sortByDate())
+                if (e.target.value === 'amount') return this.props.sortByAmount()
+                this.props.sortByDate()
                     
                 }}>
                     <option value='amount'>Amount</option>
@@ -75,4 +72,14 @@ const mapStateToProp = (state) => {
     }
 }
 
-export default connect(mapStateToProp)(ExpenseFilter)
+const mapDispToProp = (dispatch) => (
+    {
+        setTextFilter : (text) => dispatch(setTextFilter(text)),
+        sortByDate : () => dispatch(sortByDate()),
+        sortByAmount : () => dispatch(sortByAmount()),
+        setEndDate : (date) => dispatch(setEndDate(date)),
+        setStartDate : (date) => dispatch(setStartDate(date)),
+    }
+)
+
+export default connect(mapStateToProp,mapDispToProp)(ExpenseFilter)
