@@ -5,7 +5,6 @@ import ExpenseFilter from './ExpenseFilter'
 
 const ExpenseDashboard = () => (
     <div>
-        <h1>I'm in heroku</h1>
         <ExpenseFilter />
         <ExpenseList />
     </div>
