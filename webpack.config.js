@@ -8,7 +8,7 @@ module.exports = () => {
         entry : "./src/app.js",
         // entry : "./src/playgroud/hoc.js",
         output : {
-            path : path.join(__dirname, "public"),
+            path : path.join(__dirname, "public", "dist"),
             filename :"app.js"
         },
         module : {
@@ -33,7 +33,8 @@ module.exports = () => {
         devtool: 'source-map',
         devServer : {
             contentBase : path.join(__dirname, "public"),
-            historyApiFallback: true
+            historyApiFallback: true,
+            publicPath : '/dist/'
         }
 
     }
