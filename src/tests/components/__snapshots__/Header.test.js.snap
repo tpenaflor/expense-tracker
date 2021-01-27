@@ -4,7 +4,6 @@ exports[`test header render 1`] = `
 <header>
   <h1>
     Expensify Header 
-    Local
   </h1>
   <NavLink
     activeClassName="is-active"

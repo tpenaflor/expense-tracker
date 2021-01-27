@@ -3,9 +3,7 @@ const path = require('path')
 const ExtractTextPlugin = require('mini-css-extract-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-process.env.NODE_ENV = 'dev'//process.env.NODE_ENV || 'dev'
-process.env.WHERE = process.env.WHERE || 'Local'
-
+process.env.NODE_ENV = process.env.NODE_ENV || 'Local'
 require('dotenv').config({ path: `.env.${process.env.NODE_ENV}`})
 
 module.exports = () => {
@@ -36,7 +34,7 @@ module.exports = () => {
         plugins :[
             CSSExtract,
             new webpack.DefinePlugin({
-                'process.env.WHERE' : JSON.stringify(process.env.WHERE),
+                'process.env.WHERE' : JSON.stringify(process.env.NODE_ENV),
                 'process.env.FB_API_KEY' : JSON.stringify(process.env.FB_API_KEY),
                 'process.env.FB_AUTH_DOMAIN' : JSON.stringify(process.env.FB_AUTH_DOMAIN),
                 'process.env.FB_DATABSE_URL' : JSON.stringify(process.env.FB_DATABSE_URL),
