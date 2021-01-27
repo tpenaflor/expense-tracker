@@ -1,7 +1,12 @@
 
 import moment from 'moment'
-import getVisibleExpenses from '../../selectors/expenses'
+import {getVisibleExpenses, getTotalExpenses} from '../../selectors/expenses'
 import dummyExpenses from '../fixtures/expenses'
+
+test("get total expenses", () => {
+    const total = getTotalExpenses(dummyExpenses)
+    console.log(total)
+})
 
 test("filter by date", ()=>{
     const filter = {

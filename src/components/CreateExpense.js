@@ -9,7 +9,6 @@ export const CreateExpense = ({onSubmit, history}) => (
         <h2>CreateExpense</h2>
         <ExpenseForm 
             onSubmit = {(expense) => {
-                // dispatch(addExpense({...expense}))
                 onSubmit(expense)
                 history.push('/')
             }}
