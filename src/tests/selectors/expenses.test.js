@@ -5,7 +5,6 @@ import dummyExpenses from '../fixtures/expenses'
 
 test("get total expenses", () => {
     const total = getTotalExpenses(dummyExpenses)
-    console.log(total)
 })
 
 test("filter by date", ()=>{
