@@ -8,7 +8,8 @@ import CreateExpensePage from '../components/CreateExpense'
 import EditExpensePage from '../components/EditExpense'
 import HelpPage from '../components/Help'
 import ErrorPage from '../components/Error'
-import PrivateRoute from '../routers/PrivateRoute'
+import CustomRoute from '../routers/CustomRoute'
+import PublicRoute from '../routers/PublicRoute'
 
 export const history = createBrowserHistory()
 
@@ -16,12 +17,12 @@ export default () => (
     <Router history={history}>
         <div>
             <Switch>
-                <Route path='/' component={Login} exact={true}/>
-                <PrivateRoute path='/home' component={HomePage}/>
-                <PrivateRoute path='/createExpense' component={CreateExpensePage} />
-                <PrivateRoute path='/editExpense/:id' component={EditExpensePage} />
-                <PrivateRoute path='/help' component={HelpPage} />
-                <PrivateRoute component={ErrorPage} />
+                <PublicRoute path='/' component={Login} exact={true}/>
+                <CustomRoute path='/home' component={HomePage}/>
+                <CustomRoute path='/createExpense' component={CreateExpensePage} />
+                <CustomRoute path='/editExpense/:id' component={EditExpensePage} />
+                <CustomRoute path='/help' component={HelpPage} />
+                <CustomRoute component={ErrorPage} />
             </Switch>
         </div>
     </Router>

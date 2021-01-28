@@ -6,7 +6,7 @@ import {NavLink} from 'react-router-dom'
 export const Header = ({logOut}) => (
     <header>
         <h1>Expensify Header {process.env.WHERE && process.env.WHERE}</h1>
-        <NavLink activeClassName="is-active" to='/home' exact={true}>Home</NavLink> 
+        <NavLink activeClassName="is-active" to='/home' >Home</NavLink> 
         <NavLink activeClassName="is-active" to='/createExpense'>Create</NavLink> 
         <NavLink activeClassName="is-active" to='/help'>Help</NavLink> 
         <button onClick ={logOut}>Log Out</button>

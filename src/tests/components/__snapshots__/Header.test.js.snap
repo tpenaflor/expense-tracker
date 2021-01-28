@@ -7,7 +7,6 @@ exports[`test header render 1`] = `
   </h1>
   <NavLink
     activeClassName="is-active"
-    exact={true}
     to="/home"
   >
     Home
@@ -39,7 +38,6 @@ exports[`test logout Button 1`] = `
   </h1>
   <NavLink
     activeClassName="is-active"
-    exact={true}
     to="/home"
   >
     Home

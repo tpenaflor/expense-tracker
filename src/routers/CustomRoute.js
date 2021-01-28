@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Route, Redirect} from 'react-router-dom'
 import Header from '../components/Header'
 
-const PrivateRoute = ({isAuth, ...rest}) => (
+const CustomRoute = ({isAuth, ...rest}) => (
     isAuth ? (
         <div>
             <Header />
@@ -18,4 +18,4 @@ const mapStateToProps = (state) => ({
     isAuth : !!state.auth.uid
 })
 
-export default connect(mapStateToProps)(PrivateRoute)
+export default connect(mapStateToProps)(CustomRoute)

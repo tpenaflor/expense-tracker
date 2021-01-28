@@ -8,11 +8,13 @@ export const addExpensee = (expense) => ({
 })
 
 export const addExpense = (expenseData = {}) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid
+
         const {desc='', note='',amount=0, createAt=0} = expenseData
         const expense = {desc, note, amount, createAt}
 
-        return db.ref('expenses').push(expense).then((snap) => {
+        return db.ref(`expenses/${uid}`).push(expense).then((snap) => {
             dispatch(addExpensee({id:snap.key, ...expense}))
         })
     }
@@ -26,9 +28,10 @@ export const removeExpensee = (id) => ({
 })
 
 export const removeExpense = (id) => {
-    return (dispatch) => {
-        
-        return db.ref(`expenses/${id}`).remove().then(() =>{
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid
+
+        return db.ref(`expenses/${uid}/${id}`).remove().then(() =>{
             dispatch(removeExpensee(id))
         })
     }
@@ -41,8 +44,10 @@ export const editExpensee = (id, update) => ({
 })
 
 export const editExpense = (id, update) => {
-    return (dispatch) => {
-        return db.ref(`expenses/${id}`).update(update).then(() =>{
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid
+
+        return db.ref(`expenses/${uid}/${id}`).update(update).then(() =>{
             dispatch(editExpensee(id, update))
         })
     }
@@ -54,9 +59,11 @@ export const setExpensess = (expenses) => ({
 })
 
 export const setExpenses = (uid) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid
+
         let expenses = []
-        return db.ref('expenses').once('value').then((snap) =>{
+        return db.ref(`expenses/${uid}`).once('value').then((snap) =>{
             snap.forEach((expense) => {
                 expenses.push({id:expense.key, ...expense.val()})
             });

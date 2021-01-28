@@ -21,7 +21,7 @@ test('test remove expense', () => {
 })
 
 test('test add edit and remove expense with database', (done)=> {
-    const store = createMockStore({});
+    const store = createMockStore({auth : {uid : 1}});
     const expenseData = {
         desc : "rice",
         amount : 500,
