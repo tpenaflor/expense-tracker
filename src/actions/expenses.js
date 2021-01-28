@@ -53,7 +53,7 @@ export const setExpensess = (expenses) => ({
     expenses
 })
 
-export const setExpenses = () => {
+export const setExpenses = (uid) => {
     return (dispatch) => {
         let expenses = []
         return db.ref('expenses').once('value').then((snap) =>{
