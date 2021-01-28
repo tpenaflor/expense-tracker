@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Login Button 1`] = `
+<div>
+  <button
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    Login
+  </button>
+</div>
+`;
+
+exports[`test Login render 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    Login
+  </button>
+</div>
+`;

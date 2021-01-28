@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 const ErrorPage = () => (
     <div>
-        404 Page - <Link to="/">Go Home</Link>
+        404 Page - <Link to="/home">Go Home</Link>
     </div>
 )
 

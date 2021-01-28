@@ -15,8 +15,8 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 const db = firebase.database()
-
-export { firebase, db as default}
+const googleAuth = new firebase.auth.GoogleAuthProvider()
+export { firebase, googleAuth, db as default}
 
 
 // db.ref('expenses').once('value').then((snap)=>{
