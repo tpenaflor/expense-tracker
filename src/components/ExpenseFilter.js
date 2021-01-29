@@ -11,11 +11,7 @@ export class ExpenseFilter extends React.Component {
         endDate : null,
         focusedInput : null
     }
-    
-    // componentDidUpdate ({filters}) {
-    //     // console.log('old',prevState)
-    //     console.log('changes',this.state)
-    // }
+
     onDatesChange = ({ startDate, endDate }) => {
         this.setState({ startDate, endDate })
 
