@@ -25,10 +25,21 @@ module.exports = () => {
             {
                 use : [
                     MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    "sass-loader",
+                    {
+                        loader :"css-loader",
+                        options : {
+                            sourceMap : true,
+                            url : false
+                        }
+                    },
+                    {
+                        loader :"sass-loader",
+                        options : {
+                            sourceMap : true
+                        }
+                    }
                     ],
-                test: /\.s?css$/
+                test: /\.s?css$/                
             }]
         },
         plugins :[

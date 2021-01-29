@@ -5,8 +5,8 @@ import {Provider} from 'react-redux'
 import Routes, {history} from './routers/appRouter'
 import configureStore from './store/configureStore'
 
-import 'normalize.css/normalize.css'
 import './styles/styles.scss'
+import 'normalize.css/normalize.css'
 import 'react-dates/lib/css/_datepicker.css'
 
 import {setExpenses} from './actions/expenses'

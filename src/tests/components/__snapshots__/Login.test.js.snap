@@ -1,33 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test Login Button 1`] = `
-<div>
-  <button
-    onClick={
-      [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      }
-    }
+<div
+  className="box-layout"
+>
+  <div
+    className="box-layout__box"
   >
-    Login
-  </button>
+    <h1
+      className="box-layout__title"
+    >
+      Expense Logger
+    </h1>
+    <p>
+      It is time to track your expenses
+    </p>
+    <button
+      className="button"
+      onClick={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+    >
+      Login with Google
+    </button>
+  </div>
 </div>
 `;
 
 exports[`test Login render 1`] = `
-<div>
-  <button
-    onClick={[Function]}
+<div
+  className="box-layout"
+>
+  <div
+    className="box-layout__box"
   >
-    Login
-  </button>
+    <h1
+      className="box-layout__title"
+    >
+      Expense Logger
+    </h1>
+    <p>
+      It is time to track your expenses
+    </p>
+    <button
+      className="button"
+      onClick={[Function]}
+    >
+      Login with Google
+    </button>
+  </div>
 </div>
 `;
