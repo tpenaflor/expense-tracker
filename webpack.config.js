@@ -9,7 +9,7 @@ require('dotenv').config({ path: `.env.${process.env.NODE_ENV}`})
 module.exports = () => {
     const CSSExtract = new ExtractTextPlugin({filename: 'styles.css'})
     return {
-        entry : "./src/app.js",
+        entry : ["@babel/polyfill","./src/app.js"],
         // entry : "./src/playgroud/hoc.js",
         output : {
             path : path.join(__dirname, "public", "dist"),
