@@ -15,9 +15,9 @@
 }
 
 .button {
-    background-color: $darkGrey;
+    background-color: $midGrey;
     border: none;
-    border-bottom: .3rem solid darken($darkGrey, 10%);
+    border-bottom: .3rem solid darken($midGrey, 10%);
     color:white;
     font-weight: 500;
     padding: $sSize;

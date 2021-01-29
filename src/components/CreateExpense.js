@@ -5,7 +5,7 @@ import ExpenseForm from './ExpenseForm'
 import {addExpense} from '../actions/expenses'
 
 export const CreateExpense = ({onSubmit, history}) => (
-    <div>
+    <div className='content-container'>
         <h2>CreateExpense</h2>
         <ExpenseForm 
             onSubmit = {(expense) => {

@@ -35,31 +35,33 @@ export class ExpenseFilter extends React.Component {
 
     render() {
         return (
-            <div>
-                <input type='text' value={this.props.filters.text} onChange={(e)=>(
-                    this.props.setTextFilter(e.target.value.trim())
-                )}/>
-                <label>Sort By:</label>
-                <select id='filterBy' value={this.props.filters.sortBy} onChange={(e)=>{
-                if (e.target.value === 'amount') return this.props.sortByAmount()
-                this.props.sortByDate()
-                    
-                }}>
-                    <option value='amount'>Amount</option>
-                    <option value='date'>Date</option>    
-                </select>
-                <DateRangePicker 
-                    startDate={this.state.startDate} // momentPropTypes.momentObj or null,
-                    endDate={this.state.endDate} // momentPropTypes.momentObj or null,
-                    onDatesChange={this.onDatesChange} // PropTypes.func.isRequired,
-                    focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                    onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
-                    isOutsideRange = {() => false}
-                    showClearDates={true}
+            <div className="content-container">
+                <div className="filter">
+                    <input type='text' value={this.props.filters.text} onChange={(e)=>(
+                        this.props.setTextFilter(e.target.value.trim())
+                    )}/>
+                    <label>Sort By:</label>
+                    <select id='filterBy' value={this.props.filters.sortBy} onChange={(e)=>{
+                    if (e.target.value === 'amount') return this.props.sortByAmount()
+                    this.props.sortByDate()
+                        
+                    }}>
+                        <option value='amount'>Amount</option>
+                        <option value='date'>Date</option>    
+                    </select>
+                    <DateRangePicker 
+                        startDate={this.state.startDate} // momentPropTypes.momentObj or null,
+                        endDate={this.state.endDate} // momentPropTypes.momentObj or null,
+                        onDatesChange={this.onDatesChange} // PropTypes.func.isRequired,
+                        focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                        onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+                        isOutsideRange = {() => false}
+                        showClearDates={true}
 
-                    startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-                    endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-                />
+                        startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
+                        endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
+                    />
+                </div>
             </div>
         )
 

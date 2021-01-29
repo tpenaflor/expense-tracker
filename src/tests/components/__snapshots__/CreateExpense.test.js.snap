@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test create expense page 1`] = `
-<div>
+<div
+  className="content-container"
+>
   <h2>
     CreateExpense
   </h2>
@@ -12,7 +14,9 @@ exports[`test create expense page 1`] = `
 `;
 
 exports[`test create expense submit 1`] = `
-<div>
+<div
+  className="content-container"
+>
   <h2>
     CreateExpense
   </h2>

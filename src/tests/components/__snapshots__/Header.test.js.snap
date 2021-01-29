@@ -1,75 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test header render 1`] = `
-<header>
-  <h1>
-    Expensify Header 
-  </h1>
-  <NavLink
-    activeClassName="is-active"
-    to="/home"
+<header
+  className="header"
+>
+  <div
+    className="content-container"
   >
-    Home
-  </NavLink>
-  <NavLink
-    activeClassName="is-active"
-    to="/createExpense"
-  >
-    Create
-  </NavLink>
-  <NavLink
-    activeClassName="is-active"
-    to="/help"
-  >
-    Help
-  </NavLink>
-  <button
-    onClick={[Function]}
-  >
-    Log Out
-  </button>
+    <div
+      className="header__content"
+    >
+      <Link
+        className="header__title"
+        to="/home"
+      >
+        <h1>
+          Expensify
+        </h1>
+      </Link>
+      <button
+        onClick={[Function]}
+      >
+        Log Out
+      </button>
+    </div>
+  </div>
 </header>
 `;
 
 exports[`test logout Button 1`] = `
-<header>
-  <h1>
-    Expensify Header 
-  </h1>
-  <NavLink
-    activeClassName="is-active"
-    to="/home"
+<header
+  className="header"
+>
+  <div
+    className="content-container"
   >
-    Home
-  </NavLink>
-  <NavLink
-    activeClassName="is-active"
-    to="/createExpense"
-  >
-    Create
-  </NavLink>
-  <NavLink
-    activeClassName="is-active"
-    to="/help"
-  >
-    Help
-  </NavLink>
-  <button
-    onClick={
-      [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      }
-    }
-  >
-    Log Out
-  </button>
+    <div
+      className="header__content"
+    >
+      <Link
+        className="header__title"
+        to="/home"
+      >
+        <h1>
+          Expensify
+        </h1>
+      </Link>
+      <button
+        onClick={
+          [MockFunction] {
+            "calls": Array [
+              Array [],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
+      >
+        Log Out
+      </button>
+    </div>
+  </div>
 </header>
 `;

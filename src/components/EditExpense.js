@@ -5,7 +5,7 @@ import ExpenseForm from './ExpenseForm'
 import {editExpense, removeExpense} from '../actions/expenses'
 
 export const EditExpensePage = (props) => (
-    <div>
+    <div className='content-container'>
         <h2>Edit {props.expense.desc} </h2>
         <ExpenseForm 
             desc = {props.expense.desc}

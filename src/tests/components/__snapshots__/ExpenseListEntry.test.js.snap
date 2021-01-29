@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test expense list entry 1`] = `
-<div>
+<div
+  className="entry"
+>
   <h2>
     <Link
       to="/editExpense/2"
